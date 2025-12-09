@@ -35,7 +35,7 @@ show dbs;
 
 ---
 
-# 📌 What is a Collection?
+## What is a Collection?
 
 A **collection** is a group of documents inside a database.
 
@@ -77,13 +77,13 @@ A **document** is a JSON-like object stored within a collection.
 
 | Type | Example |
 |------|---------|
-| String | "Ashoka" |
+| String | "Ramu" |
 | Number | 25 |
 | Null | null |
 | Array | ["Java", "Node"] |
 | Object | {city: "Hyd"} |
 | Boolean | true |
-| Function | function(){} |
+| Function | ()=>{} |
 | ISOTime | ISODate() |
 | Date | new Date() |
 
