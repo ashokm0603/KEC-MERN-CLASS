@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { toast, ToastContainer } from "react-toastify";
 const AddUser = () => {
   const [userDetails, setUserDetails] = useState({
     name: "",
@@ -8,39 +8,40 @@ const AddUser = () => {
     city: "",
   });
 
+  const [gender, setGender] = useState("");
 
-  const [gender, setGender]=useState("")
-
-  const addUserHandler =  async(e) => {
+  const addUserHandler = async (e) => {
     e.preventDefault();
 
-    let gen =  document.getElementsByName("gender");
-    let city =await  document.getElementsByName("city");
-    gen.forEach( (inp) => {
-   
+    let gen = document.getElementsByName("gender");
+    let city = await document.getElementsByName("city");
+    gen.forEach((inp) => {
       if (inp.checked) {
-
-       setGender(inp.value);
+        setGender(inp.value);
       }
     });
 
     city.forEach((opt) => {
       if (opt.selected) {
         setUserDetails({ ...userDetails, city: opt.value });
-    }
-});
-
+      }
+    });
 
     console.log("Name ", userDetails.name);
     console.log("Email ", userDetails.email);
     console.log("PHone No ", userDetails.phoneNo);
     console.log("City", userDetails.city);
-    console.log( "Gender :"+ gender);
-  };
+    console.log("Gender :" + gender);
+    toast.success("User Added Successfully");
+};
 
+const resetHandler=()=>{
+      toast.warning("Form Data Reset Successfully.. !");
+
+  }
   return (
     <div>
-      <h1>Add User Details </h1>
+      <h1 className="text-center bg-info m-4 p-3">Add User Details </h1>
       <form action="">
         <fieldset>
           <label htmlFor="">Name :</label>
@@ -101,7 +102,7 @@ const AddUser = () => {
             </option>
           </select>
           <br />
-          <div className="row my-4">
+          <div className="row btn-container">
             <button
               type="submit"
               onClick={addUserHandler}
@@ -111,12 +112,16 @@ const AddUser = () => {
             </button>
           </div>
           <div className="row">
-            <button type="reset" className="btn btn-warning">
+            <button type="reset" onClick={resetHandler} className="btn btn-warning">
               <strong>Reset </strong>
             </button>
           </div>
         </fieldset>
       </form>
+
+
+
+      <ToastContainer/>
     </div>
   );
 };

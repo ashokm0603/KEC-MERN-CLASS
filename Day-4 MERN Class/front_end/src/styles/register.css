@@ -5,8 +5,14 @@ h2{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
 }
-
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 fieldset{
+
+    width: 500px;
     margin: 20px 50px;
     padding: 40px;
     border: 1px solid black;
@@ -34,8 +40,13 @@ button{
 }
 
 button:hover{
-    margin-top: 10px;
+
     background-color: black;
     color: aliceblue;
     box-shadow: 4px 4px 5px aliceblue;
+}
+
+
+.btn-container{
+    margin-top: 40px;
 }
