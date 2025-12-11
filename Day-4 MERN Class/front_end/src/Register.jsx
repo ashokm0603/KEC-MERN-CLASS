@@ -7,9 +7,8 @@ function Register() {
   const [phoneNo, setPhoneNo] = useState("");
   const [password, setPassword] = useState("");
 
-
-
-  const submitFormHandler=()=>{
+  const submitFormHandler=(e)=>{
+    e.preventDefault()
     console.log(`Name :${name}`);
     console.log(`Email :${email}`);
     console.log(`Phone No :${phoneNo}`);
